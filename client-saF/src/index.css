@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@100..900&display=swap');
+
+@import "tailwindcss";
+
+/* body{
+    background-color: #121212;
+} */
+
+:root {
+    --logo-font: "Bebas Neue", sans-serif;
+    --primary-font: "Outfit", sans-serif;
+  }
+
+  body{
+    font-family: var(--primary-font);
+  }
+
+  ::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    display: none;
+  }
