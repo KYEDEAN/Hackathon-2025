@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const userSchema = new mongoose.Schema(
   {
     // Basic Information
-    name: {
+    username: {
       type: String,
       required: true,
       trim: true,
@@ -17,32 +17,25 @@ const userSchema = new mongoose.Schema(
       trim: true,
     },
 
-    // Authentication
-    username: {
-      type: String,
-      required: true,
-      unique: true,
-      trim: true,
-    },
-
     password: {
       type: String,
       required: true,
     },
 
-    // Optional Profile Information
-    profilePicture: {
-      type: String, // URL or file path
-      default: '',
-    },
-
-    // Project Information
-    projectsLink: [
+    hackathon: [
       {
-        title: { type: String, required: true },
-        description: { type: String, default: '' },
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Hackathon',
       },
     ],
+
+    // Project Information
+    // projectsLink: [
+    //   {
+    //     title: { type: String, required: true },
+    //     description: { type: String, default: '' },
+    //   },
+    // ],
 
     bio: {
       type: String,
